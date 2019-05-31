@@ -49,7 +49,7 @@ module.exports = {
 	blockHeaderLength: 248,
 	blockReceiptTimeOut: 20, // 2 blocks
 	confirmationLength: 77,
-	epochTime: new Date(Date.UTC(2017, 8, 2, 17, 0, 0, 0)),
+	epochTime: new Date(Date.UTC(2019, 5, 30, 17, 0, 0, 0)),
 	fairSystemActivateBlock: 4359464,
 	fees: {
 		send: 50000000,
@@ -79,7 +79,7 @@ module.exports = {
 	minBroadhashConsensus: 51,
 	nethashes: [
 		// Mainnet
-		'77265cf40a806763bc1e3ff0d899a1c0582b46e84ce8808b445dd9b95aa86da5',
+		'4892c497b1925231539828c587ccb7d310dfc6b2943a3be672accf61519f73c1',
 		// Testnet
 		'38f153a81332dea86751451fd992df26a9249f0834f72f58f84ac31cceb70f43'
 	],
@@ -103,7 +103,7 @@ module.exports = {
 	},
 	signatureLength: 196,
 	// WARNING: When changing totalAmount you also need to change getBlockRewards(int) SQL function!
-	totalAmount: 9800000000000000,
+	totalAmount: 98000000000000000,
 	unconfirmedTransactionTimeOut: 10800, // 1080 blocks
 	multisigConstraints: {
 		min: {
