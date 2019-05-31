@@ -155,7 +155,7 @@ node.createAddressFromPublicKey = function (publicKey) {
         temp[i] = publicKeyHash[7 - i];
     }
 
-    return 'U' + bignum.fromBuffer(temp).toString();
+    return 'G' + bignum.fromBuffer(temp).toString();
 };
 
 // sign transaction
