@@ -106,12 +106,12 @@
     },
     "dapp": {
         "masterrequired": true,
-        "masterpassword": "",
+        "masterpassword": "zHygB98zG6DC",
         "autoexec": []
     },
     "wsClient": {
         "portWS": 36668,
         "enabled": true
     },
-    "nethash": "bd330166898377fb28743ceef5e43a5d9d0a3efd9b3451fb7bc53530bb0a6d64"
+    "nethash": "a44f1fb4c69c47999bc800fe77e79f021efcbe4651868d2bc765edb543b39b2a"
 }
