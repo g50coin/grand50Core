@@ -1,5 +1,5 @@
 {
-    "port": 36666,
+    "port": 39999,
     "address": "0.0.0.0",
     "fileLogLevel": "info",
     "logFileName": "logs/grand50.log",
@@ -12,7 +12,7 @@
         "port": 5432,
         "database": "grand50_main",
         "user": "grand50",
-        "password": "password",
+        "password": "5=2a2U<G8pUP[-w",
         "poolSize": 95,
         "poolIdleTimeout": 30000,
         "reapIntervalMillis": 1000,
@@ -47,16 +47,20 @@
         "enabled": true,
         "list": [
             {
-                "ip": "51.15.221.205",
-                "port": 36666
+                "ip": "45.32.121.133",
+                "port": 39999
             },
             {
-                "ip": "51.15.88.53",
-                "port": 36666
+                "ip": "45.76.181.61",
+                "port": 39999
             },
             {
-                "ip": "51.15.217.230",
-                "port": 36666
+                "ip": "149.28.135.141",
+                "port": 39999
+            },
+            {
+                "ip": "139.180.219.145",
+                "port": 39999
             }
         ],
         "access": {
