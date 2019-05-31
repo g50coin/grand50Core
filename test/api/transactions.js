@@ -38,7 +38,7 @@ function postTransaction (params, done) {
     node.post('/api/transactions', params, done);
 }
 
-function sendADM (account, amount, done) {
+function sendG50 (account, amount, done) {
 	var expectedFee = node.expectedFee(amount);
 
 	putTransaction({
@@ -62,7 +62,7 @@ function sendADM (account, amount, done) {
 	});
 }
 
-function sendADM2voter (params, done) {
+function sendG502voter (params, done) {
     node.put('/api/transactions/', params, function (err, res) {
         done(err, res);
     });
@@ -70,27 +70,27 @@ function sendADM2voter (params, done) {
 
 before(function (done) {
 	setTimeout(function () {
-		sendADM(account, node.randomLISK(), done);
+		sendG50(account, node.randomLISK(), done);
 	}, 2000);
 });
 
 before(function (done) {
 	setTimeout(function () {
-		sendADM(account2, node.randomLISK(), done);
+		sendG50(account2, node.randomLISK(), done);
 	}, 2000);
 });
 
 before(function (done) {
 	setTimeout(function () {
 		// Send 20 LSK
-		sendADM(account2, 20*100000000, done);
+		sendG50(account2, 20*100000000, done);
 	}, 2000);
 });
 
 before(function (done) {
 	setTimeout(function () {
 		// Send 100 LSK
-		sendADM(account2, 100*100000000, done);
+		sendG50(account2, 100*100000000, done);
 	}, 2000);
 });
 
@@ -801,7 +801,7 @@ describe('PUT /api/transactions', function () {
 				recipientId: account2.address
 			}, function (err, res) {
 				node.expect(res.body).to.have.property('success').to.be.not.ok;
-				node.expect(res.body).to.have.property('error').to.match(/Account does not have enough ADM: U[0-9]+ balance: [0-9.]+/);
+				node.expect(res.body).to.have.property('error').to.match(/Account does not have enough G50: U[0-9]+ balance: [0-9.]+/);
 				done();
 			});
 		});
@@ -941,7 +941,7 @@ describe('POST /api/transactions', function () {
     };
 
     before(function (done) {
-        sendADM2voter({
+        sendG502voter({
             secret: node.gAccount.password,
             amount: 500000000000,
             recipientId: account4.address

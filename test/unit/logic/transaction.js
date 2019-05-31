@@ -460,7 +460,7 @@ describe('transaction', function () {
 			sender.balance = 0;
 			var res = transaction.checkBalance(amount, balanceKey, validUnconfirmedTrs, sender);
 			expect(res.exceeded).to.equal(true);
-			expect(res.error).to.include('Account does not have enough ADM:');
+			expect(res.error).to.include('Account does not have enough G50:');
 		});
 
 		it('should be okay if insufficient balance from genesis account', function () {
@@ -755,7 +755,7 @@ describe('transaction', function () {
 			trsData.amount = node.constants.totalAmount;
 			trsData.signature = transaction.sign(testSenderKeypair, trsData);
 			transaction.verify(trsData, testSender, {}, function (err) {
-				expect(err).to.include('Account does not have enough ADM:');
+				expect(err).to.include('Account does not have enough G50:');
 				done();
 			});
 		});
@@ -1000,7 +1000,7 @@ describe('transaction', function () {
 			trs.amount = '985045891180190800000000000000';
 
 			transaction.applyUnconfirmed(trs, testSender, function (err) {
-				expect(err).to.include('Account does not have enough ADM');
+				expect(err).to.include('Account does not have enough G50');
 				done();
 			});
 		});

@@ -10,7 +10,7 @@ function openAccount (params, done) {
 	});
 }
 
-function sendADM (params, done) {
+function sendG50 (params, done) {
 	node.put('/api/transactions/', params, function (err, res) {
 		done(err, res);
 	});
@@ -42,7 +42,7 @@ describe('PUT /api/accounts/delegates without funds', function () {
 			delegates: ['+' + node.eAccount.publicKey]
 		}, function (err, res) {
 			node.expect(res.body).to.have.property('success').to.be.not.ok;
-			node.expect(res.body).to.have.property('error').to.match(/Account does not have enough ADM/);
+			node.expect(res.body).to.have.property('error').to.match(/Account does not have enough G50/);
 			done();
 		});
 	});
@@ -53,7 +53,7 @@ describe('PUT /api/accounts/delegates without funds', function () {
 			delegates: ['-' + node.eAccount.publicKey]
 		}, function (err, res) {
 			node.expect(res.body).to.have.property('success').to.be.not.ok;
-			node.expect(res.body).to.have.property('error').to.match(/Account does not have enough ADM/);
+			node.expect(res.body).to.have.property('error').to.match(/Account does not have enough G50/);
 			done();
 		});
 	});
@@ -73,7 +73,7 @@ describe('PUT /api/delegates without funds', function () {
 			username: account.username
 		}, function (err, res) {
 			node.expect(res.body).to.have.property('success').to.be.not.ok;
-			node.expect(res.body).to.have.property('error').to.match(/Account does not have enough ADM/);
+			node.expect(res.body).to.have.property('error').to.match(/Account does not have enough G50/);
 			done();
 		});
 	});
@@ -83,7 +83,7 @@ describe('PUT /api/accounts/delegates with funds', function () {
 	var account = node.randomAccount();
 
 	before(function (done) {
-		sendADM({
+		sendG50({
 			secret: node.gAccount.password,
 			amount: node.LISK,
 			recipientId: account.address
@@ -265,7 +265,7 @@ describe('PUT /api/delegates with funds', function () {
 	});
 
 	beforeEach(function (done) {
-		sendADM({
+		sendG50({
 			secret: node.gAccount.password,
 			amount: node.LISK,
 			recipientId: account.address
@@ -765,7 +765,7 @@ describe('GET /api/delegates/voters', function () {
 	var account = node.randomAccount();
 
 	before(function (done) {
-		sendADM({
+		sendG50({
 			secret: node.gAccount.password,
 			amount: node.LISK,
 			recipientId: account.address
@@ -838,7 +838,7 @@ describe('GET /api/delegates/voters', function () {
 // 	before(function (done) {
 // 		for (let i = 0; i < 101; i++) {
 // 			const account = accounts[i];
-// 			sendADM({
+// 			sendG50({
 // 				secret: "echo indoor minute album notice pear prosper situate alcohol vintage athlete crouch",
 // 				amount: node.constants.fees.delegate,
 // 				recipientId: account.address

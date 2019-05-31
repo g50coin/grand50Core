@@ -10,7 +10,7 @@ function postTransaction (transaction, done) {
 	});
 }
 
-function sendADM (params, done) {
+function sendG50 (params, done) {
     node.put('/api/transactions/', params, function (err, res) {
         done(err, res);
     });
@@ -57,7 +57,7 @@ describe('POST /peer/transactions', function () {
 
 				postTransaction(transaction, function (err, res) {
 					node.expect(res.body).to.have.property('success').to.be.not.ok;
-					node.expect(res.body).to.have.property('message').to.match(/Account does not have enough ADM/);
+					node.expect(res.body).to.have.property('message').to.match(/Account does not have enough G50/);
 					done();
 				});
 			});
@@ -69,7 +69,7 @@ describe('POST /peer/transactions', function () {
             account.username = node.randomDelegateName();
 
 			before(function (done) {
-                sendADM({
+                sendG50({
                     secret: node.gAccount.password,
                     amount: node.fees.delegateRegistrationFee,
                     recipientId: account.address
@@ -149,7 +149,7 @@ describe('POST /peer/transactions', function () {
 			let account = node.randomAccount();
 
 			before(function (done) {
-				sendADM({
+				sendG50({
 					secret: node.gAccount.password,
 					amount: (node.fees.delegateRegistrationFee * 2),
 					recipientId: account.address

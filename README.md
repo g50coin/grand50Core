@@ -1,22 +1,22 @@
-# ADAMANT
+# GRAND50
 
-ADAMANT is decentralized messaging platform based on Lisk codebase and written in JavaScript. For more information please refer to our website: <https://adamant.im/>.
+GRAND50 is decentralized messaging platform based on Lisk codebase and written in JavaScript. For more information please refer to our website: <https://grand50.im/>.
 
-ADAMANT is the most secure and anonymous messenger, encrypted with Blockchain.
+GRAND50 is the most secure and anonymous messenger, encrypted with Blockchain.
 
 Highlights:
 
 - The most secure and anonymous messenger (see comparison table on the Website)
-- Try it now: <https://msg.adamant.im/>
+- Try it now: <https://msg.grand50.im/>
 - iOS and Android apps available
 - Trusted. Open-source project.
-- Brand new [Fair dPoS](https://medium.com/adamant-im/fair-delegate-system-in-dpos-568e5c3c86c8) consensus
+- Brand new [Fair dPoS](https://medium.com/grand50-im/fair-delegate-system-in-dpos-568e5c3c86c8) consensus
 - The only one which is Blockchain-powered
 - Integrated crypto transfers
 
-**Use this repository to run your own ADAMANT node and support true messaging decentralization. You can also promote your node to a delegate to forge blocks and receive ADM block rewards**
+**Use this repository to run your own GRAND50 node and support true messaging decentralization. You can also promote your node to a delegate to forge blocks and receive G50 block rewards**
 
-How to run ADAMANT node: [Instructions for users](https://medium.com/adamant-im/how-to-run-your-adamant-node-on-ubuntu-990e391e8fcc).
+How to run GRAND50 node: [Instructions for users](https://medium.com/grand50-im/how-to-run-your-grand50-node-on-ubuntu-990e391e8fcc).
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0)
 
@@ -30,7 +30,7 @@ For making process simplier, you can use tools/install_ubuntu_dependencies.sh sc
 
   `sudo apt-get install -y python build-essential curl automake autoconf libtool`
 
-- Git (<https://github.com/git/git>) — Used for cloning and updating ADAMANT
+- Git (<https://github.com/git/git>) — Used for cloning and updating GRAND50
 
   `sudo apt-get install -y git`
 
@@ -60,19 +60,19 @@ For making process simplier, you can use tools/install_ubuntu_dependencies.sh sc
   sudo apt-get install -y postgresql postgresql-contrib libpq-dev
   
   # Create user if you are working from superuser
-  adduser adamant
-  sudo usermod -aG sudo adamant
-  su - adamant
+  adduser grand50
+  sudo usermod -aG sudo grand50
+  su - grand50
   
   # Create db
   sudo -u postgres createuser --createdb $USER
-  createdb adamant_test
-  createdb adamant_main
-  sudo -u postgres psql -d adamant_test -c "alter user "$USER" with password 'password';"
-  sudo -u postgres psql -d adamant_main -c "alter user "$USER" with password 'password';"
+  createdb grand50_test
+  createdb grand50_main
+  sudo -u postgres psql -d grand50_test -c "alter user "$USER" with password 'password';"
+  sudo -u postgres psql -d grand50_main -c "alter user "$USER" with password 'password';"
   ```
 
-- PM2 (<https://github.com/Unitech/pm2>) — PM2 manages the node process for ADAMANT (Optional)
+- PM2 (<https://github.com/Unitech/pm2>) — PM2 manages the node process for GRAND50 (Optional)
 
   `sudo npm install -g pm2`
 
@@ -81,64 +81,64 @@ For making process simplier, you can use tools/install_ubuntu_dependencies.sh sc
 
 ## Installation Steps
 
-Clone the ADAMANT repository using Git and initialize the modules.
+Clone the GRAND50 repository using Git and initialize the modules.
 
 ```
-git clone https://github.com/Adamant-im/adamant
-cd adamant
+git clone https://github.com/Grand50-im/grand50
+cd grand50
 npm install
 ```
 
 ## Alternative Ubuntu install process
 
-Alternative way to install ADAMANT with prerequisites. You need only Git installed locally. Or instead of cloning you can download and unpack zip from GitHub.
+Alternative way to install GRAND50 with prerequisites. You need only Git installed locally. Or instead of cloning you can download and unpack zip from GitHub.
 
 ```
 # Create user 
-adduser adamant
-sudo usermod -aG sudo adamant
-su - adamant
+adduser grand50
+sudo usermod -aG sudo grand50
+su - grand50
 
-git clone https://github.com/Adamant-im/adamant
-cd adamant
+git clone https://github.com/Grand50-im/grand50
+cd grand50
 sh tools/install_ubuntu_dependencies.sh
 
 sudo -u postgres createuser --createdb $USER
-createdb adamant_test
-createdb adamant_main
-sudo -u postgres psql -d adamant_test -c "alter user "$USER" with password 'password';"
-sudo -u postgres psql -d adamant_main -c "alter user "$USER" with password 'password';"
+createdb grand50_test
+createdb grand50_main
+sudo -u postgres psql -d grand50_test -c "alter user "$USER" with password 'password';"
+sudo -u postgres psql -d grand50_main -c "alter user "$USER" with password 'password';"
 
 npm install
 ```
 
-## Managing ADAMANT
+## Managing GRAND50
 
-To test that ADAMANT is built and configured correctly, run the following command:
+To test that GRAND50 is built and configured correctly, run the following command:
 
 `node app.js`
 
 Once the process is verified as running correctly, `CTRL+C` and start the process with `pm2`. This will fork the process into the background and automatically recover the process if it fails.
 
-`pm2 start --name adamant app.js`
+`pm2 start --name grand50 app.js`
 
 After the process is started, its runtime status and log location can be retrieved by issuing the following command:
 
-`pm2 show adamant`
+`pm2 show grand50`
 
-To stop ADAMANT after it has been started with `pm2`, issue the following command:
+To stop GRAND50 after it has been started with `pm2`, issue the following command:
 
-`pm2 stop adamant`
+`pm2 stop grand50`
 
 **NOTE:** The **port**, **address** and **config-path** can be overridden by providing the relevant command switch:
 
 ```
-pm2 start --name adamant app.js -- -p [port] -a [address] -c [config-path]
+pm2 start --name grand50 app.js -- -p [port] -a [address] -c [config-path]
 ```
 
 ## Tests
 
-Before running any tests, please ensure ADAMANT is configured to run on the same testnet that is used by the test-suite.
+Before running any tests, please ensure GRAND50 is configured to run on the same testnet that is used by the test-suite.
 
 Replace **config.json** and **genesisBlock.json** with the corresponding files under the **test** directory:
 
@@ -149,8 +149,8 @@ cp test/config.json test/genesisBlock.json .
 **NOTE:** If the node was started with a different genesis block previous, trauncate the database before running tests.
 
 ```
-dropdb adamant_test
-createdb adamant_test
+dropdb grand50_test
+createdb grand50_test
 ```
 
 **NOTE:** The master passphrase for this genesis block is as follows:
@@ -159,7 +159,7 @@ createdb adamant_test
 wagon stock borrow episode laundry kitten salute link globe zero feed marble
 ```
 
-Launch ADAMANT (runs on port 36667):
+Launch GRAND50 (runs on port 36667):
 
 ```
 node app.js
@@ -180,7 +180,7 @@ npm test -- test/lib/transactions.js
 
 ## Authors
 
-- ADAMANT Tech Labs: Dmitriy Soloduhin, Sergey Ushakov <devs@adamant.im>
+- GRAND50 Tech Labs: Dmitriy Soloduhin, Sergey Ushakov <devs@grand50.im>
 - Boris Povod <boris@crypti.me>
 - Pavel Nekrasov <landgraf.paul@gmail.com>
 - Sebastian Stupurac <stupurac.sebastian@gmail.com>
@@ -191,7 +191,7 @@ npm test -- test/lib/transactions.js
 
 ## License
 
-Copyright © 2017-2018 ADAMANT TECH LABS LP
+Copyright © 2017-2018 GRAND50 TECH LABS LP
 Copyright © 2016-2017 Lisk Foundation
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.

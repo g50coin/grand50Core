@@ -4,7 +4,7 @@ const node = require('./../node.js');
 const Mnemonic = require('bitcore-mnemonic');
 const _ = require('lodash');
 
-function sendADM (params, done) {
+function sendG50 (params, done) {
     node.put('/api/transactions/', params, function (err, res) {
         done(err, res);
     });
@@ -29,9 +29,9 @@ describe('GET /api/chatrooms/:ID/:ID', function () {
     const recipient1 = node.randomAccount();
     const recipient2 = node.randomAccount();
 
-    // send ADM to message sender
+    // send G50 to message sender
     before(function (done) {
-        sendADM({
+        sendG50({
             secret: node.gAccount.password,
             amount: node.fees.messageFee*3+node.fees.transactionFee*2,
             recipientId: sender.address
@@ -40,9 +40,9 @@ describe('GET /api/chatrooms/:ID/:ID', function () {
         });
     });
 
-    // send ADM to recipient1
+    // send G50 to recipient1
     before(function (done) {
-        sendADM({
+        sendG50({
             secret: node.gAccount.password,
             amount: node.fees.messageFee,
             recipientId: recipient1.address
@@ -51,9 +51,9 @@ describe('GET /api/chatrooms/:ID/:ID', function () {
         });
     });
 
-    // send ADM to recipient2
+    // send G50 to recipient2
     before(function (done) {
-        sendADM({
+        sendG50({
             secret: node.gAccount.password,
             amount: node.fees.messageFee,
             recipientId: recipient2.address
@@ -160,9 +160,9 @@ describe('GET /api/chatrooms/:ID/:ID', function () {
         });
     });
 
-    // send ADM to message sender
+    // send G50 to message sender
     before(function (done) {
-        sendADM({
+        sendG50({
             secret: sender.password,
             amount: node.fees.transactionFee,
             recipientId: recipient1.address

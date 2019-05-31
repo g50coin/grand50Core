@@ -381,7 +381,7 @@ Transaction.prototype.checkBalance = function (amount, balance, trs, sender) {
 	return {
 		exceeded: exceeded,
 		error: exceeded ? [
-			'Account does not have enough ADM:', sender.address,
+			'Account does not have enough G50:', sender.address,
 			'balance:', new bignum(sender[balance].toString() || '0').div(Math.pow(10, 8))
 		].join(' ') : null
 	};

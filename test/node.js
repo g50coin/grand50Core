@@ -146,7 +146,7 @@ node.randomDelegateName = function () {
 	return delegateName;
 };
 
-// return an ADM address from a public key
+// return an G50 address from a public key
 node.createAddressFromPublicKey = function (publicKey) {
     const publicKeyHash = crypto.createHash('sha256').update(publicKey, 'hex').digest();
     let temp = Buffer.alloc(8);

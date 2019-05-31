@@ -14,7 +14,7 @@ function postTransactions (transactions, done) {
 	}, done);
 }
 
-function sendADM (params, done) {
+function sendG50 (params, done) {
     node.put('/api/transactions', params, function (err, res) {
         node.expect(res.body).to.have.property('success').to.be.ok;
         node.onNewBlock(function (err) {
@@ -34,7 +34,7 @@ describe('POST /peer/transactions', function () {
 		const account = node.randomAccount();
 
 		before(function (done) {
-			sendADM({
+			sendG50({
                 secret: node.gAccount.password,
                 amount: 5000000000*2000,
                 recipientId: account.address
@@ -91,7 +91,7 @@ describe('POST /peer/transactions', function () {
 		const account = node.randomAccount();
 
 		before(function (done) {
-			sendADM({
+			sendG50({
                 secret: node.gAccount.password,
                 amount: 5000000000*2000,
                 recipientId: account.address

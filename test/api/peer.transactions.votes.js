@@ -53,7 +53,7 @@ function postVote (transaction, done) {
 	});
 }
 
-function sendADM (params, done) {
+function sendG50 (params, done) {
 	node.put('/api/transactions', params, function (err, res) {
 		node.expect(res.body).to.have.property('success').to.be.ok;
 		node.onNewBlock(function (err) {
@@ -81,7 +81,7 @@ function registerDelegate (account, done) {
 describe('POST /peer/transactions', function () {
 
 	before(function (done) {
-		sendADM({
+		sendG50({
 			secret: node.gAccount.password,
 			amount: 50000000000000,
 			recipientId: account.address
@@ -372,7 +372,7 @@ describe('POST /peer/transactions after registering a new delegate', function ()
 	});
 
 	before(function (done) {
-		sendADM({
+		sendG50({
 			secret: node.gAccount.password,
 			amount: 5000000000000,
 			recipientId: account.address

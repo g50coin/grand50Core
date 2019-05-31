@@ -106,7 +106,7 @@ Node.prototype.shared = {
 	 * @return {Object}   cb.obj.version Anonymous object with version info
 	 * @return {String}   cb.obj.version.build Build information (if available, otherwise '')
 	 * @return {String}   cb.obj.version.commit Hash of last git commit (if available, otherwise '')
-	 * @return {String}   cb.obj.version.version ADAMANT version from package.json
+	 * @return {String}   cb.obj.version.version GRAND50 version from package.json
 	 */
     getStatus: function (req, cb) {
         var lastBlock = modules.blocks.lastBlock.get();
