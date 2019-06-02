@@ -29,7 +29,7 @@
     "api": {
         "enabled": true,
         "access": {
-            "public": false,
+            "public": true,
             "whiteList": [
                 "127.0.0.1"
             ]
@@ -117,5 +117,5 @@
         "portWS": 36668,
         "enabled": true
     },
-    "nethash": "a44f1fb4c69c47999bc800fe77e79f021efcbe4651868d2bc765edb543b39b2a"
+    "nethash": "ac3a191a1546f961b52c936fc1529700caec9df6b6bb75bb2821bb10ead7950e"
 }
