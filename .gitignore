@@ -11,7 +11,7 @@ nodejs/
 npm-debug.log
 release
 ssl/
-tools/
+tools
 
 stacktrace*
 test/.coverage-unit
