@@ -49,13 +49,13 @@ module.exports = {
 	blockHeaderLength: 248,
 	blockReceiptTimeOut: 20, // 2 blocks
 	confirmationLength: 77,
-	epochTime: new Date(Date.UTC(2019, 5, 30, 17, 0, 0, 0)),
+	epochTime: new Date(Date.UTC(2019, 6, 1, 12, 0, 0, 0)),
 	fairSystemActivateBlock: 4359464,
 	fees: {
 		send: 50000000,
 		vote: 5000000000,
 		secondsignature: 500000000,
-		delegate: 300000000000,
+		delegate: 10000000000000,
 		multisignature: 500000000,
 		dapp: 2500000000,
         old_chat_message: 500000,
@@ -103,7 +103,7 @@ module.exports = {
 	},
 	signatureLength: 196,
 	// WARNING: When changing totalAmount you also need to change getBlockRewards(int) SQL function!
-	totalAmount: 98000000000000000,
+	totalAmount: 990000000000000000,
 	unconfirmedTransactionTimeOut: 10800, // 1080 blocks
 	multisigConstraints: {
 		min: {
