@@ -27,7 +27,7 @@
     "cors": "=2.8.1",
     "decompress-zip": "LiskHQ/decompress-zip#f46b0a3",
     "ejs": "=2.5.5",
-    "express": "=4.14.1",
+    "express": "=4.17.3",
     "express-domain-middleware": "=0.1.0",
     "express-query-int": "=1.0.1",
     "express-rate-limit": "=2.6.0",
